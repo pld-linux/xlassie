@@ -2,12 +2,13 @@ Summary:	Mail notification tool for X11, POP3 support, counts messages
 Summary(pl):	Narzêdzie powiadamiaj±ce o poczcie dla X11 z obs³ug± POP3
 Name:		xlassie
 Version:	1.8
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Applications
 Vendor:		Trent Piepho <xyzzy@speakeasy.org>
 Source0:	http://www.speakeasy.org/~xyzzy/download/%{name}-%{version}.tar.gz
 # Source0-md5:	d3422a80b6352da4f790da70a7156a94
+Patch0:		%{name}-bufferoverflow.patch
 URL:		http://www.speakeasy.org/~xyzzy/xlassie/
 BuildRequires:	XFree86-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -28,9 +29,9 @@ pozwala na dzia³anie jako applet KDE czy WindowMakera.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
-# TODO: %%{pmcflags}
 %{__make}
 
 %install

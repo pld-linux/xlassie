@@ -20,11 +20,11 @@ mail, but how many new messages you have. Extra support to operate as
 a KDE or WindowMaker dock applet, in addition to plain old X11 mode.
 
 %description -l pl
-XLassie jest rozszerzaona wersja XBiff. Obsluguje serwery pocztowe
-POP3, moze wykonywac polecenia po kliknieciu na nim, napisany
-bezposrednio w xlib wiec zuzywa malo pamieci i nie informuje _czy_
-masz nowa poczte, ale ile masz nowych wiadomosci. Dodatkowa obsluga
-pozwala na dzialanie jako applet KDE czy WindowMakera.
+XLassie jest rozszerzon± wersj± XBiff. Obs³uguje serwery pocztowe
+POP3, mo¿e wykonywaæ polecenia po klikniêciu na nim. Jest napisany
+bezpo¶rednio w xlib wiêc zu¿ywa ma³o pamiêci i nie informuje _czy_
+masz nowa pocztê, ale ile masz nowych wiadomo¶ci. Dodatkowa obs³uga
+pozwala na dzia³anie jako applet KDE czy WindowMakera.
 
 %prep
 %setup -q

@@ -1,0 +1,46 @@
+diff -uNr xlassie-1.8-org/defaults.h xlassie-1.8/defaults.h
+--- xlassie-1.8-org/defaults.h	Mon May 28 11:28:10 2001
++++ xlassie-1.8/defaults.h	Sat Sep 13 15:00:48 2003
+@@ -80,4 +80,7 @@
+ #define KDEFONT3  "-adobe-times-medium-r-normal--25-*-*-*-*-*-iso8859-1"
+ #define WMFONT3   "-adobe-times-medium-r-normal--34-*-*-*-*-*-iso8859-1"
+ 
++/* Maximal username/pass length */
++#define MAXLEN 128
++
+ /****************************************************************************/
+diff -uNr xlassie-1.8-org/xlassie.c xlassie-1.8/xlassie.c
+--- xlassie-1.8-org/xlassie.c	Tue May 29 12:16:06 2001
++++ xlassie-1.8/xlassie.c	Sat Sep 13 15:03:26 2003
+@@ -56,8 +56,8 @@
+ int Interval=INTERVAL_SPOOL;
+ char SpoolFile[256];
+ char Command[256];
+-char Username[32];
+-char Password[32];
++char Username[MAXLEN];
++char Password[MAXLEN];
+ char NewMailCommand[256];
+ char *Geometry=NULL;
+ int Options=0;
+@@ -201,7 +201,7 @@
+ 	int i;
+ 
+ 	printf("Mail account password: ");
+-	fgets(Password, 32, stdin);
++	fgets(Password, MAXLEN, stdin);
+ 	i = strlen(Password)-1;
+ 	if(Password[i]=='\n') Password[i]='\0';
+ }
+@@ -265,9 +265,11 @@
+ 			if(!intervalused) Interval=INTERVAL_POP3;
+ 		} else if(!strcmp(argv[i],"-username"))  {
+ 			if(++i==argc)  { usage(); exit(2); };
++                        if(strlen(argv[i]) >= MAXLEN) { printf("Maximal username length is %d\n", MAXLEN); exit(2); };
+ 			strcpy(Username,argv[i]);
+ 		} else if(!strcmp(argv[i],"-password"))  {
+ 			if(++i==argc)  { usage(); exit(2); };
++                        if(strlen(argv[i]) >= MAXLEN) { printf("Maximal password length is %d\n", MAXLEN); exit(2); };
+ 			strcpy(Password,argv[i]);
+ 			memset(argv[i],0,strlen(argv[i]));
+ 			if(!strcmp(Password,"ask"))  ask_password();

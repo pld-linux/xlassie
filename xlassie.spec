@@ -7,6 +7,7 @@ License:	GPL
 Group:		X11/Applications
 Vendor:		Trent Piepho <xyzzy@speakeasy.org>
 Source0:	http://www.speakeasy.org/~xyzzy/download/%{name}-%{version}.tar.gz
+# Source0-md5:	d3422a80b6352da4f790da70a7156a94
 URL:		http://www.speakeasy.org/~xyzzy/xlassie/
 BuildRequires:	XFree86-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)

@@ -1,5 +1,5 @@
 Summary:	Mail notification tool for X11, POP3 support, counts messages
-Summary(pl):	Narzedzie powiadamiajace o poczcie dla X11
+Summary(pl):	Narzêdzie powiadamiaj±ce o poczcie dla X11 z obs³ug± POP3
 Name:		xlassie
 Version:	1.8
 Release:	1
@@ -10,7 +10,6 @@ Source0:	http://www.speakeasy.org/~xyzzy/download/%{name}-%{version}.tar.gz
 URL:		http://www.speakeasy.org/~xyzzy/xlassie/
 BuildRequires:	XFree86-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-%define _prefix /usr/X11R6
 
 %description
 XLassie is an enhanced version of XBiff. Support for POP3 mailservers,
@@ -23,23 +22,21 @@ a KDE or WindowMaker dock applet, in addition to plain old X11 mode.
 XLassie jest rozszerzon± wersj± XBiff. Obs³uguje serwery pocztowe
 POP3, mo¿e wykonywaæ polecenia po klikniêciu na nim. Jest napisany
 bezpo¶rednio w xlib wiêc zu¿ywa ma³o pamiêci i nie informuje _czy_
-masz nowa pocztê, ale ile masz nowych wiadomo¶ci. Dodatkowa obs³uga
+jest nowa poczta, ale ile jest nowych wiadomo¶ci. Dodatkowa obs³uga
 pozwala na dzia³anie jako applet KDE czy WindowMakera.
 
 %prep
 %setup -q
 
 %build
-
+# TODO: %%{pmcflags}
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT
-
 install -d $RPM_BUILD_ROOT%{_bindir}
-install xlassie $RPM_BUILD_ROOT%{_bindir}
 
+install xlassie $RPM_BUILD_ROOT%{_bindir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -47,4 +44,4 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc README xlassie.lsm
-%attr(755, root, root) %{_bindir}/*
+%attr(755,root,root) %{_bindir}/*

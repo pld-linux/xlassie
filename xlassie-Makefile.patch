@@ -1,0 +1,19 @@
+--- xlassie-1.8.orig/Makefile	2006-07-16 00:54:01.000000000 +0200
++++ xlassie-1.8/Makefile	2006-07-16 00:54:24.000000000 +0200
+@@ -9,13 +9,13 @@
+ all: xlassie
+ 
+ xlassie: xlassie.o socket.o
+-	gcc $(CFLAGS) -o xlassie xlassie.o socket.o $(LIBS)
++	$(CC) $(CFLAGS) -o xlassie xlassie.o socket.o $(LIBS)
+ 
+ xlassie.o: xlassie.c defaults.h
+-	gcc $(CFLAGS) -c xlassie.c
++	$(CC) $(CFLAGS) -c xlassie.c
+ 
+ socket.o: socket.c defaults.h
+-	gcc $(CFLAGS) -c socket.c
++	$(CC) $(CFLAGS) -c socket.c
+ 
+ dist: clean
+ 	@(dir=`pwd`; name=`basename $$dir`; \

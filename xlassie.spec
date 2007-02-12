@@ -1,5 +1,5 @@
 Summary:	Mail notification tool for X11, POP3 support, counts messages
-Summary(pl.UTF-8):   Narzędzie powiadamiające o poczcie dla X11 z obsługą POP3
+Summary(pl.UTF-8):	Narzędzie powiadamiające o poczcie dla X11 z obsługą POP3
 Name:		xlassie
 Version:	1.8
 Release:	2

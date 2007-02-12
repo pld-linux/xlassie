@@ -1,5 +1,5 @@
 Summary:	Mail notification tool for X11, POP3 support, counts messages
-Summary(pl):	Narzêdzie powiadamiaj±ce o poczcie dla X11 z obs³ug± POP3
+Summary(pl.UTF-8):   NarzÄ™dzie powiadamiajÄ…ce o poczcie dla X11 z obsÅ‚ugÄ… POP3
 Name:		xlassie
 Version:	1.8
 Release:	2
@@ -21,12 +21,12 @@ memory usage is less, and it doesn't just tell you _if_ you have new
 mail, but how many new messages you have. Extra support to operate as
 a KDE or WindowMaker dock applet, in addition to plain old X11 mode.
 
-%description -l pl
-XLassie jest rozszerzon± wersj± XBiff. Obs³uguje serwery pocztowe
-POP3, mo¿e wykonywaæ polecenia po klikniêciu na nim. Jest napisany
-bezpo¶rednio w xlib wiêc zu¿ywa ma³o pamiêci i nie informuje _czy_
-jest nowa poczta, ale ile jest nowych wiadomo¶ci. Dodatkowa obs³uga
-pozwala na dzia³anie jako applet KDE czy WindowMakera.
+%description -l pl.UTF-8
+XLassie jest rozszerzonÄ… wersjÄ… XBiff. ObsÅ‚uguje serwery pocztowe
+POP3, moÅ¼e wykonywaÄ‡ polecenia po klikniÄ™ciu na nim. Jest napisany
+bezpoÅ›rednio w xlib wiÄ™c zuÅ¼ywa maÅ‚o pamiÄ™ci i nie informuje _czy_
+jest nowa poczta, ale ile jest nowych wiadomoÅ›ci. Dodatkowa obsÅ‚uga
+pozwala na dziaÅ‚anie jako applet KDE czy WindowMakera.
 
 %prep
 %setup -q
